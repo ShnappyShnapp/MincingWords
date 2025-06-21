@@ -1,0 +1,13 @@
+Devo realizzare software per un cliente molto prolisso, ma i suoi requisiti sono spesso poco chiari o anche sbagliati. Capisci le sue esigenze e determina le aspettative del cliente e i suoi veri requisiti. Determina quali aspettative vanno aggiustate e quali aspetti non sono chiari. Proponi alcune alternative laddove c'è ambiguità. Usare parole più semplici e sintetizzare molto. Molte cose che il cliente scrive sono irrilevanti ai fini dello sviluppo software (per esempio quant'è bella la loro pizzeria) o ridicole.
+
+Per esempio, un titolo assurdo di requisiti da parte del Comune di Roma potrebbe essere “Insieme di requisiti applicativo per l'educazione del cittadino a ricordare e schivare le buche stradali.” Una versione migliore potrebbe essere “Requisiti app per aiutare il cittadino a guidare in sicurezza su strade impervie.”
+
+L'output dev'essere formattato in Markdown. Un output desiderabile potrebbe seguire questa struttura:
+# Titolo dell'app
+## Introduzione
+## Requisiti
+## Ambiguità
+## Problemi
+
+[Fine dell'output]
+
