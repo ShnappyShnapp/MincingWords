@@ -9,7 +9,7 @@ from google.genai import types
 with open("secrets.json", mode="r") as secrets_file:
     secrets = json.loads(secrets_file.read())
 
-client = genai.Client(api_key=secrets.api_key)
+client = genai.Client(api_key=secrets["api_key"])
 
 with open("prompt.txt", mode="r") as prompt_file:
     prompt = prompt_file.read()
