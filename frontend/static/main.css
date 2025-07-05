@@ -1,18 +1,18 @@
 :root {
-    --color-background-light: white;
-    --color-on-background-light: black;
-    --color-primary-light: oklch(0.9588 0.0301 71.54);
-    --color-accent1-light: oklch(0.8323 0.1534 70.67);
-    --color-accent2-light: oklch(0.8323 0.1534 212.82);
+    --color-background-light: oklch(0.9837 0.0085 44.89);
+    --color-on-background-light: oklch(0.3127 0.0179 59.95);
+    --color-primary-light: oklch(0.9176 0.050473 56.4498);
+    --color-accent1-light: oklch(0.4906 0.0981 58.68);
+    --color-accent2-light: oklch(0.4757 0.0836 214.01);
     --color-outline-light: rgba(0, 0, 0, 0.20);
     --color-on-primary-container: var(--color-on-background-light);
     --color-outline-on-primary-container: var(--color-outline-light);
 
-    --color-background-dark: oklch(0.2 0 0);
-    --color-on-background-dark: white;
-    --color-primary-dark: oklch(0.9588 0.0301 71.54);
-    --color-accent1-dark: oklch(0.8323 0.1534 70.67);
-    --color-accent2-dark: oklch(0.8323 0.1534 212.82);
+    --color-background-dark: oklch(0.3127 0.0179 59.95);
+    --color-on-background-dark: oklch(0.9837 0.0085 44.89);
+    --color-primary-dark: oklch(0.3902 0.0689 215.01);
+    --color-accent1-dark: oklch(0.8351 0.109656 57.9258);
+    --color-accent2-dark: oklch(0.8203 0.0817 215.88);
     --color-outline-dark: rgba(255, 255, 255, 0.20);
 
     --color-background: var(--color-background-light);
@@ -147,6 +147,7 @@ main {
     justify-content: start;
     place-items: center center;
     backdrop-filter: blur(24px);
+    color: var(--color-on-background);
 }
 
 body > header {
