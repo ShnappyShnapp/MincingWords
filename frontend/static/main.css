@@ -1,18 +1,20 @@
 :root {
-    --color-background-light: oklch(0.9837 0.0085 44.89);
-    --color-on-background-light: oklch(0.3127 0.0179 59.95);
-    --color-primary-light: oklch(0.9176 0.050473 56.4498);
-    --color-accent1-light: oklch(0.4906 0.0981 58.68);
-    --color-accent2-light: oklch(0.4757 0.0836 214.01);
+    --color-background-light: oklch(0.98 0.013 45);
+    --color-on-background-light: oklch(0.20 0.06 315);
+    --color-primary-light: oklch(0.93 0.0538 56);
+    --color-accent1-light: oklch(0.6 0.18 217);
+    --color-accent2-light: oklch(0.6 0.18 13);
+    --color-accent1-2-light: oklch(0.6 0.18 301);
     --color-outline-light: rgba(0, 0, 0, 0.20);
-    --color-on-primary-container: var(--color-on-background-light);
-    --color-outline-on-primary-container: var(--color-outline-light);
+    --color-on-primary-container: var(--color-on-background);
+    --color-outline-on-primary-container: var(--color-outline);
 
-    --color-background-dark: oklch(0.3127 0.0179 59.95);
-    --color-on-background-dark: oklch(0.9837 0.0085 44.89);
-    --color-primary-dark: oklch(0.3902 0.0689 215.01);
-    --color-accent1-dark: oklch(0.8351 0.109656 57.9258);
-    --color-accent2-dark: oklch(0.8203 0.0817 215.88);
+    --color-background-dark: oklch(0.20 0.013 45);
+    --color-on-background-dark: oklch(0.86 0.06 45);
+    --color-primary-dark: oklch(0.28 0.06 256);
+    --color-accent1-dark: oklch(0.8 0.17 58);
+    --color-accent2-dark: oklch(0.8 0.17 214);
+    --color-accent1-2-dark: oklch(0.8 0.17 316);
     --color-outline-dark: rgba(255, 255, 255, 0.20);
 
     --color-background: var(--color-background-light);
@@ -20,6 +22,7 @@
     --color-primary: var(--color-primary-light);
     --color-accent1: var(--color-accent1-light);
     --color-accent2: var(--color-accent2-light);
+    --color-accent1-2: var(--color-accent1-2-light);
     --color-outline: var(--color-outline-light);
 
     --color-background-inverse: var(--color-background-dark);
@@ -27,12 +30,66 @@
     --color-primary-inverse: var(--color-primary-dark);
     --color-accent1-inverse: var(--color-accent1-dark);
     --color-accent2-inverse: var(--color-accent2-dark);
+    --color-accent1-2-inverse: var(--color-accent1-2-dark);
     --color-outline-inverse: var(--color-outline-dark);
 
-    --opacity-weak: 0.70;
+    --opacity-weak: 0.76;
 
     --appbar-height: 64px;
     --content-max-width: 1200px;
+    --waves-height: 128px;
+}
+
+@property --color-background {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+@property --color-on-background {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+@property --color-primary {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+@property --color-outline {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+@property --color-accent1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+@property --color-accent2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+@property --color-accent1-2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+:root {
+    transition: --color-background 280ms cubic-bezier(0.7, 0.2, 0.5, 1),
+                --color-on-background 280ms cubic-bezier(0.7, 0.2, 0.5, 1),
+                --color-primary 280ms cubic-bezier(0.7, 0.2, 0.5, 1),
+                --color-outline 280ms cubic-bezier(0.7, 0.2, 0.5, 1),
+                --color-accent1 280ms cubic-bezier(0.7, 0.2, 0.5, 1),
+                --color-accent2 280ms cubic-bezier(0.7, 0.2, 0.5, 1),
+                --color-accent1-2 280ms cubic-bezier(0.7, 0.2, 0.5, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,6 +99,7 @@
         --color-primary: var(--color-primary-dark);
         --color-accent1: var(--color-accent1-dark);
         --color-accent2: var(--color-accent2-dark);
+        --color-accent1-2: var(--color-accent1-2-dark);
         --color-outline: var(--color-outline-dark);
 
         --color-background-inverse: var(--color-background-light);
@@ -49,7 +107,8 @@
         --color-primary-inverse: var(--color-primary-light);
         --color-accent-inverse: var(--color-accent-light);
         --color-accent1-inverse: var(--color-accent1-light);
-        --color-accent3-inverse: var(--color-accent2-light);
+        --color-accent2-inverse: var(--color-accent2-light);
+        --color-accent1-2-inverse: var(--color-accent1-2-light);
         --color-outline-inverse: var(--color-outline-light);
     }
 }
@@ -63,13 +122,10 @@
     padding: 0;
 }
 
-.material-symbols-outlined {
-    font-size: inherit;
-
-    font-variation-settings:
-        'FILL' 0,
-        'GRAD' 0,
-        'opsz' 24;
+.material-symbols-rounded {
+    font-family: "Material Symbols Rounded";
+    font-variation-settings: "FILL" 0, "GRAD" 0;
+    -webkit-font-feature-settings: 'liga';
 }
 
 :root {
@@ -81,11 +137,20 @@
     color: var(--color-on-background);
     text-align: start;
 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
     font-size: 13px;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 400;
     font-style: normal;
+}
+
+:root, body {
+    min-height: 100%;
 }
 
 .weak-text {
@@ -94,7 +159,7 @@
 
 h2 > strong {
     color: transparent;
-    background: linear-gradient(70deg, var(--color-accent1), var(--color-accent2));
+    background: linear-gradient(in oklch 120deg, var(--color-accent1), var(--color-accent1-2), var(--color-accent2));
     background-clip: text;
 }
 
@@ -103,14 +168,25 @@ h2 > strong {
     color: var(--color-on-primary-container);
 }
 
+#top-section {
+    margin-bottom: calc(var(--waves-height) - 48px);
+}
+
 .primary-container-waves {
+    width: 100%;
+    height: var(--waves-height);
     fill: var(--color-primary);
-    margin-bottom: 16px;
+    margin-top: -24px 0;
+    margin-bottom: calc(var(--waves-height) * -1);
     transform: scaleY(-1);
+    pointer-events: none;
+}
+
+.primary-container-waves > path {
+    pointer-events: auto;
 }
 
 body {
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -120,25 +196,26 @@ body {
 body > header {
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 
-.distributed-column,
+.column,
 .limited-width-column {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     place-items: stretch start;
 }
 
 .limited-width-column {
     align-self: center;
     max-width: var(--content-max-width);
-    margin: 16px;
+    margin: 0.4em;
 }
 
 main {
     text-align: center;
-    padding-bottom: 64px;
+    flex: 1 0 fit-content;
 }
 
 .appbar {
@@ -157,7 +234,6 @@ body > header {
     grid-template: minmax(0, 1fr) auto / minmax(0, 1fr);
     grid-template-areas: "appbar"
                          "bottom-outline";
-    padding: 0 16px;
     font-size: 17px;
     font-weight: 600;
     color: var(--color-on-primary-container);
@@ -167,11 +243,13 @@ body > header::after {
     content: "";
     grid-area: bottom-outline;
     height: 1px;
+    margin: 0 16px;
     background: var(--color-outline-on-primary-container);
 }
 
 body > header > .appbar {
     grid-area: appbar;
+    padding: 0 17px;
 }
 
 h2, h3 {
@@ -196,6 +274,23 @@ h3 {
     }
 }
 
+body > main > section {
+    flex: 1 0 fit-content;
+}
+
 .top-section {
-    padding-top: calc(var(--appbar-height) + 36px);
+    padding-top: calc(var(--appbar-height) + 24px);
+}
+
+.bottom-section {
+    padding: 4em 0;
+}
+
+.bottom-section .material-symbols-rounded {
+    font-size: 2em;
+    font-weight: 550;
+}
+
+#file-picker {
+    display: none;
 }
